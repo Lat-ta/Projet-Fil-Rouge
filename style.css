@@ -20,6 +20,15 @@ div{
 	border-bottom: 3px black double;
 	
 }
+.header_gest{
+	
+	background-color: #C0C0C0;
+	height: 7%;
+	position: absolute; 
+	bottom: 0; left: 0; right: 0;
+	text-align:center;
+}
+
 
 #footer-menu li{
 	display:inline;
@@ -39,6 +48,18 @@ div{
     margin-bottom: 0;
     text-align: center;
 }
+
+footer {
+	
+	background-color: #e10203;
+	height: 5%;
+	position: absolute; 
+	bottom: 0; left: 0; right: 0;
+	text-align:center;
+	font-size:14px;
+	color:#FFFFFF;
+}
+
 
 #logovelov{
 	left:0;
@@ -102,14 +123,4 @@ h2 {
 	color: #e10203;
 }
 
-footer {
-	
-	background-color: #e10203;
-	height: 5%;
-	position: absolute; 
-	bottom: 0; left: 0; right: 0;
-	text-align:center;
-	font-size:14px;
-	color:#FFFFFF;
-}
 
