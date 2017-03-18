@@ -2,7 +2,7 @@
 			
 	<ul id="footer-menu">
 		<li>
-		<b>Mentions légales</b>
+		<b><a href="mentions_legales.php" >Mentions légales</a></b>
 		</li>
 		<li>
 		<b><a href="#top" style="color:#FFFFFF">Haut de page</a></b>

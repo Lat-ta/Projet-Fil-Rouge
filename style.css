@@ -1,11 +1,16 @@
 * {-moz-box-sizing: border-box; box-sizing: border-box;}
+
+html {
+	height: 100%;
+	margin: 0; padding: 0;
+}
+
 body {
 	
 	background-color: #FFFFFF;
-	/* Changer la couleur http://stylescss.free.fr/couleurs.php */
 	color: #000;
 	font-family: 'Oxygen',Arial,Helvetica,sans-serif;
-	
+	height:92%;
 }
 
 div{
@@ -20,6 +25,14 @@ div{
 	border-bottom: 3px black double;
 	
 }
+
+.contenu{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 .header_gest{
 	
 	background-color: #C0C0C0;
@@ -36,26 +49,19 @@ div{
 	margin-right:10px;
 }
 
-.contenu{
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 10%;
-    padding-right: 10%;
-}
 
 #footer-menu{
 	padding-left: 0;
-    margin-bottom: 0;
     text-align: center;
 }
 
 footer {
 	
 	background-color: #e10203;
+	display : table-row;
 	height: 5%;
-	position: absolute; 
-	bottom: 0; left: 0; right: 0;
-	text-align:center;
+	position: fixed; 
+	bottom: 0; left: 0; right: 0; top:95%;
 	font-size:14px;
 	color:#FFFFFF;
 }
@@ -121,6 +127,14 @@ h2 {
 	font-family: 'Oxygen',Arial,Helvetica,sans-serif;
     font-weight: normal;
 	color: #e10203;
+}
+
+td {
+width : 50%;
+}
+
+.mentions_legales{
+	margin-bottom : 6%;
 }
 
 
