@@ -13,8 +13,13 @@ body {
 	height:92%;
 }
 
-div{
-	display:block;
+
+.hidden{
+	display:none;
+}
+
+.shown{
+	display:visible;
 }
 
 .header {
@@ -136,5 +141,7 @@ width : 50%;
 .mentions_legales{
 	margin-bottom : 6%;
 }
+
+ 
 
 
