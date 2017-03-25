@@ -7,7 +7,7 @@ class ConnexionBase{
     public static function Init(){
         try
         {
-            self::$pdo = new PDO('mysql:host=localhost;dbname=filRouge', 'root', 'root');
+            self::$pdo = new PDO('mysql:host=localhost;dbname=fil_rouge', 'root', '');
         }
         catch(Exception $e)
         {

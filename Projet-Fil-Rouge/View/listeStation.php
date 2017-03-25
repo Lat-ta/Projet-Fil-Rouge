@@ -16,7 +16,7 @@
 <?php 
 require_once '../Controller/StationController.php';
 
-$station = ModelStation::getLesStations(); 
+$stations = ModelStation::getLesStations(); 
 foreach ($stations as $station):?>
 <tr>
     <td> <?php echo $station->getIdStation()?> </td>
