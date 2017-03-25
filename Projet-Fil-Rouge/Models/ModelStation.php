@@ -21,7 +21,11 @@ class ModelStation
         return $this->CAPACITESTATION; 
     
     }
+        public function getBonus(){
+        return $this->BONUS;
     
+    }
+   
     public static function getLesStations()
     {
                 
