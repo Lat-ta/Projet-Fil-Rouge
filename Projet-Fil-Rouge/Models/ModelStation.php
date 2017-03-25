@@ -7,17 +7,7 @@ require_once '../Cnx/ConnexionBase.php';
 class ModelStation 
 {
 
-    private $IDSTATION;
-    private $EMPLACEMENTSTATION;
-    private $CAPACITESTATION; 
-    
-    public function __construct($IDSTATION,$EMPLACEMENTSTATION,$CAPACITESTATION){
-        
-        $this->IDSTATION=$IDSTATION;
-        $this->EMPLACEMENTSTATION=$EMPLACEMENTSTATION;
-        $this->CAPACITESTATION=$CAPACITESTATION;
-        
-    } 
+   
     
     public function getIdStation(){
         return $this->IDSTATION;
