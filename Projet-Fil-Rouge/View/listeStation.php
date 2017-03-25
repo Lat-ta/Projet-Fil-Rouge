@@ -17,12 +17,23 @@
 require_once '../Controller/StationController.php';
 
 $stations = ModelStation::getLesStations(); 
-foreach ($stations as $station):?>
-<tr>
+foreach ($stations as $station):
+ if($station->getBonus() == 'Oui'){?>
+ 
+<tr bgcolor="pink">
     <td> <?php echo $station->getIdStation()?> </td>
     <td> <?php echo $station->getEmplacementStation() ?> </td>
     <td><?php echo $station->getCapaciteStation()?></td>
 </tr>
+    <?php }else{?>
+<tr>
+    <td> <?php echo $station->getIdStation()?> </td>
+    <td> <?php echo $station->getEmplacementStation() ?> </td>
+    <td><?php echo $station->getCapaciteStation()?></td>
+</tr> 
+        
+    <?php } ?>
+
 <?php endforeach;?>
 </table>
 </body>
