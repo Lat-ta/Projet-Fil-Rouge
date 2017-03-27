@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="ISO-8859-1">
 	<link rel="stylesheet" href="style.css"/>
-	<title>Insert title here</title>
+	<title>Connexion</title>
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	</head>
 	<body>
