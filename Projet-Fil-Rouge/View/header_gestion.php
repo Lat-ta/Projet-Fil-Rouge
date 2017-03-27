@@ -1,4 +1,4 @@
-<div class="header_gest" id="top">
+<div class="header" id="top">
 
 		<h1> Espace Gestionnaire</h1>
 

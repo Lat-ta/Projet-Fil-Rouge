@@ -1,4 +1,16 @@
-<form name="paiement" onsubmit=" return verifierform(this)" action ="confirmation_paiement.php"> 
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css"/>
+	<title>Paiement</title>
+	</head>
+	
+	<body >
+	<?php include("header.php"); ?>
+
+
+	<form name="paiement" onsubmit=" return verifierform(this)" action ="confirmation_paiement.php"> 
 				</br></br>
 				<fieldset id="donneesperso">
 				
@@ -184,4 +196,9 @@
 												
 												</script>
 												
-		</form>
+	</form>
+		
+	<?php include("footer.php"); ?>
+	</body>
+	
+</html>

@@ -6,37 +6,35 @@
 	<title>Localisation des Stations</title>
 	</head>
 	
-	<body>
+	<body >
 
 	<?php include("header_gestion.php"); ?>
-	
+	<h1 id="titre">Les Stations</h1>
+		<table>
+		<tr>
+			<td>Identifiant</td>
+			<td>Statut</td>
+			<td>Identifiant Borne</td>
+			<td>Identifiant Station</td>
+			<td>Nom Station</td>
+
+			
+		</tr>
+		<?php 
+		require_once '../Controller/VeloController.php';
+
+		$velos = ModelVelo::getLesVelos(); 
+		foreach ($velos as $velo):?>
+		<tr>
+			<td> <?php echo $velo->getIdVelo()?> </td>
+			<td> <?php echo $velo->getStatutVelo() ?> </td>
+			<td><?php echo $velo->getIdBorne()?></td>
+			<td><?php echo $velo->getIdStation()?></td>
+			<td><?php echo $velo->getNomStation()?></td>
+		</tr>
+		<?php endforeach;?>
+		</table>
 		
-		<h1 id="titre">Les Vélos</h1>
-			<table>
-			<tr>
-				<td style ="width : auto">Identifiant</td>
-				<td>Statut</td>
-				<td>Identifiant Borne</td>
-				<td>Identifiant Station</td>
-				<td>Nom Station</td>
-
-				
-			</tr>
-			<?php 
-			require_once '../Controller/VeloController.php';
-
-			$velos = ModelVelo::getLesVelos(); 
-			foreach ($velos as $velo):?>
-			<tr>
-				<td> <?php echo $velo->getIdVelo()?> </td>
-				<td> <?php echo $velo->getStatutVelo() ?> </td>
-				<td><?php echo $velo->getIdBorne()?></td>
-				<td><?php echo $velo->getIdStation()?></td>
-				<td><?php echo $velo->getNomStation()?></td>
-			</tr>
-			<?php endforeach;?>
-			</table>
-	
 		<footer>
 			
 			<ul id="footer-menu">

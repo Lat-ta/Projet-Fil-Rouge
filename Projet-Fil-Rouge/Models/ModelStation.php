@@ -6,8 +6,6 @@ require_once '../Cnx/ConnexionBase.php';
 
 class ModelStation 
 {
-
-   
     
     public function getIdStation(){
         return $this->IDSTATION;
@@ -36,9 +34,11 @@ class ModelStation
         $rep =  ConnexionBase::$pdo->query($sql);  
         $rep->setFetchMode(PDO::FETCH_CLASS,"ModelStation");
         $stations = $rep->fetchAll(); 
-
         
         return $stations; 
 
     }
+	
+	
+	
 }
