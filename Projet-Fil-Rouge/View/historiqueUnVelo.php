@@ -12,14 +12,11 @@
 	</br>
 	</br>
 	
-	<form method="POST" action="historiqueUnVelo.php">
 	
-	<input type="text" name="idvelo" />
-	<input type="submit" value="Rechercher" /> 
+	<?php 
+		$idvelo = $_POST['idvelo'];
+	?> 
 	
-	</form>
-	
-	</br>
 	
 	<table>
 		<tr>
@@ -31,10 +28,12 @@
 		
 		</tr>
 		<?php 
-		require_once '../Controller/VeloController.php';
+		
+		require_once '../Models/ModelVelo.php';
 
-		$histo = ModelVelo::getHistoriqueVelos(); 
-		foreach ($histo as $velo):?>
+		$histor = ModelVelo::getHistoriqueUnVelo($idvelo); 
+		
+		foreach ($histor as $velo):?>
 		<tr>
 			<td style="text-align:center"> <?php echo $velo->getIdVelo()?> </td>
 			<td style="text-align:center"> <?php echo $velo->getDateMiseEnRoute()?> </td>

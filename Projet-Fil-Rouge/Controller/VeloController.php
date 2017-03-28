@@ -23,5 +23,23 @@ class VeloController{
 
     }
 	
+	public function getHistoriqueVelosAction()
+    {
+       $histor = ModelVelo::getHistoriqueUnVelo();
+       require '../View/historiquevelo_gestion.php';
+
+    }
+	
+	public function getHistoriqueUnVeloAction()
+    {
+		
+       $histor = ModelVelo::getHistoriqueUnVelo($idvelo);
+       require '../View/historiquevelo_gestion.php';
+
+    }
+	
 }
     ?>
+	
+	
+	

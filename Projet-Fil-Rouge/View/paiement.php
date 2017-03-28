@@ -77,7 +77,7 @@
 				
 				</br>
 				
-				<fieldset class="hidden" id="paiementpaypal" > <!-- Voir pourquoi ca fonctionne pour la CB mais pas Paypal ...... --> 
+				<fieldset class="hidden" id="paiementpaypal" > 
  				
 					<legend> Entrez vos Informations Paypal </legend>
 				

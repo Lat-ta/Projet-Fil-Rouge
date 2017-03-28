@@ -27,6 +27,14 @@ class ModelVelo
     public function getNomStation(){
         return $this->NOMSTATION;
     }
+	
+	public function getDateMiseEnRoute(){
+        return $this->DATEMISEENROUTE;
+    }
+	
+	public function getKmParcourus(){
+        return $this->KMPARCOURUS;
+    }
     
     
     public static function getLesVelos()
@@ -56,5 +64,29 @@ class ModelVelo
 	
 	}
 	
+	public static function getHistoriqueVelos(){
+	
+		ConnexionBase::Init();
+        $sql = "SELECT * FROM historique_velo";
+        $rep =  ConnexionBase::$pdo->query($sql);  
+        $rep->setFetchMode(PDO::FETCH_CLASS,"ModelVelo");
+        $histo = $rep->fetchAll(); 
+        
+        return $histo;
+	
+	}
+	
+	public static function getHistoriqueUnVelo($id){
+	
+		ConnexionBase::Init();
+        $sql = "SELECT * FROM historique_velo WHERE IDVELO like'" .$id."'";
+        $rep =  ConnexionBase::$pdo->query($sql);  
+        $rep->setFetchMode(PDO::FETCH_CLASS,"ModelVelo");
+        $histor = $rep->fetchAll(); 
+		
+        
+        return $histor;
+	
+	}
 }
 
