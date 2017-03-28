@@ -42,5 +42,19 @@ class ModelVelo
         return $velos; 
 
     }
+	
+	public static function getVelosRep(){
+	
+		ConnexionBase::Init();
+        $sql = "SELECT * FROM velo_reparation";
+        $rep =  ConnexionBase::$pdo->query($sql);  
+        $rep->setFetchMode(PDO::FETCH_CLASS,"ModelVelo");
+        $reparation = $rep->fetchAll(); 
+        
+        return $reparation; 
+	
+	
+	}
+	
 }
 

@@ -1,3 +1,43 @@
-<div class="detailsvelo_gestion">
-	<!-- 3 - Bouton détails renvoie à une page de détails par vélo : procédure  -->
-	</div>
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css"/>
+	<title>Vélos en réparation</title>
+	</head>
+	
+	<body >
+	<?php include("header_gestion.php"); ?>
+	
+	
+	<table>
+		<tr>
+			<td>Identifiant</td>
+		
+		</tr>
+		<?php 
+		require_once '../Controller/VeloController.php';
+
+		$velos = ModelVelo::getVelosRep(); 
+		foreach ($velos as $velo):?>
+		<tr>
+			<td style="text-align:center"> <?php echo $velo->getIdVelo()?> </td>
+			<td> <input type ="button" value="Détails" onclick=Afficherdetails(<?php echo $velo->getIdVelo() ?>)/>  </td>
+		</tr>
+		<?php endforeach;?>
+	</table>	
+	
+	
+
+	<footer>
+			
+			<ul id="footer-menu">
+				<li>
+				<b>Intranet Vélo'v ©</b>
+				</li>
+			</ul>
+		
+	</footer>
+		
+	</body>
+</html>

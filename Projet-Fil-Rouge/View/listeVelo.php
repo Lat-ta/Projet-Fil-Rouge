@@ -3,13 +3,13 @@
 	<head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css"/>
-	<title>Localisation des Stations</title>
+	<title>Localisation des Vélos</title>
 	</head>
 	
 	<body >
 
 	<?php include("header_gestion.php"); ?>
-	<h1 id="titre">Les Stations</h1>
+	<h1 id="titre">Les Vélos</h1>
 		<table>
 		<tr>
 			<td>Identifiant</td>
