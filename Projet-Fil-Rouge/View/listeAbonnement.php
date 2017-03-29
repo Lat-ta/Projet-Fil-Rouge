@@ -8,6 +8,13 @@
 	
 	<body >
 	<?php include("header.php"); ?>
+	
+	<?php include("menu.php"); ?>
+
+	</br>
+	</br>
+	
+	
 	<h1 id="titre">Les Abonnements</h1>
 	
 		<table>

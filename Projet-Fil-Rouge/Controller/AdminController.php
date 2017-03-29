@@ -2,9 +2,7 @@
 
 
 require_once '../Models/ModelAdmin.php';
-
-
-
+if(!class_exists('AdminController')) {
 class AdminController{
 
         
@@ -13,10 +11,11 @@ class AdminController{
     {
 		
        $infos = ModelAdmin::getgetInfosSalarie($idvelo);
-       require '../View/Admin.php';
+       require_once '../View/Admin.php';
 
     }
 	
+}
 }
     ?>
 	

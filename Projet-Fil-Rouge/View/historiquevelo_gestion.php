@@ -8,8 +8,9 @@
 	
 	<body >
 	<?php include("header_gestion.php"); ?>
+	<?php include("menu_gestion.php"); ?>
 	
-	</br>
+	
 	</br>
 	
 	<form method="POST" action="historiqueUnVelo.php">
@@ -32,6 +33,7 @@
 		</tr>
 		<?php 
 		require_once '../Controller/VeloController.php';
+		require_once '../Models/ModelVelo.php';
 
 		$histo = ModelVelo::getHistoriqueVelos(); 
 		foreach ($histo as $velo):?>

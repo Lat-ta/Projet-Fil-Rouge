@@ -8,6 +8,7 @@
 	
 	<body >
 	<?php include("header_gestion.php"); ?>
+	<?php include("menu_gestion.php"); ?>
 	
 	
 	<table>
@@ -17,6 +18,7 @@
 		</tr>
 		<?php 
 		require_once '../Controller/VeloController.php';
+		require_once '../Models/ModelVelo.php';
 
 		$velos = ModelVelo::getVelosRep(); 
 		foreach ($velos as $velo):?>
