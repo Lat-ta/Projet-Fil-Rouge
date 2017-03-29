@@ -35,7 +35,22 @@ class ModelVelo
 	public function getKmParcourus(){
         return $this->KMPARCOURUS;
     }
+	
+	public function getDescriptionVehicule(){
+        return $this->DESCRIPTIONVEHICULE;
+    }
+	
+	public function getDateDebut(){
+        return $this->DATEDEBUT;
+    }
     
+	public function getCompteRendu(){
+        return $this->COMPTERENDU;
+    }
+	
+	public function getDateRemiseEnService(){
+        return $this->DATEREMISEENSERVICE;
+    }
     
     public static function getLesVelos()
     {
@@ -60,6 +75,19 @@ class ModelVelo
         $reparation = $rep->fetchAll(); 
         
         return $reparation; 
+	
+	
+	}
+	
+	public static function getUnVeloRep($idv){
+	
+		ConnexionBase::Init();
+        $sql = "SELECT * FROM info_rep WHERE IDVELO like'" .$idv."'";
+        $rep =  ConnexionBase::$pdo->query($sql);  
+        $rep->setFetchMode(PDO::FETCH_CLASS,"ModelVelo");
+        $inforep = $rep->fetchAll(); 
+        
+        return $inforep; 
 	
 	
 	}

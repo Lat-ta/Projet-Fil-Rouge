@@ -10,42 +10,26 @@
 	<?php include("header_gestion.php"); ?>
 	<?php include("menu_gestion.php"); ?>
 	
-	
-	</br>
-	
-	<form method="POST" action="historiqueUnVelo.php">
-	
-	<input type="text" name="idvelo" />
-	<input type="submit" value="Rechercher" /> 
-	
-	</form>
-	
-	</br>
-	
+	</br></br>
 	<table>
 		<tr>
-		
 			<td>Identifiant</td>
-			<td>Date de mise en route</td>
-			<td>Km parcourus</td>
-			<td>Identifiant Station</td>
 		
 		</tr>
 		<?php 
 		require_once '../Controller/VeloController.php';
-		
+		require_once '../Models/ModelVelo.php';
 
-		$histo = ModelVelo::getHistoriqueVelos(); 
-		foreach ($histo as $velo):?>
+		$velos = ModelVelo::getVelosRep(); 
+		foreach ($velos as $velo):?>
 		<tr>
 			<td style="text-align:center"> <?php echo $velo->getIdVelo()?> </td>
-			<td style="text-align:center"> <?php echo $velo->getDateMiseEnRoute()?> </td>
-			<td style="text-align:center"> <?php echo $velo->getKmParcourus()?> </td>
-			<td style="text-align:center"> <?php echo $velo->getIdStation()?> </td>
-	
+			<td> <form method="post" action="cible.php"> <input type="hidden" name="idvelo" value="<?php echo $velo->getIdVelo()?>"><input type ="submit" value="Détails" /> </form> </td>
 		</tr>
 		<?php endforeach;?>
 	</table>	
+	
+	
 	
 	
 

@@ -23,7 +23,7 @@
 		</tr>
 		<?php 
 		require_once '../Controller/VeloController.php';
-		require_once '../Models/ModelVelo.php';
+		
 
 		$velos = ModelVelo::getLesVelos(); 
 		foreach ($velos as $velo):?>

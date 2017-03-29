@@ -1,24 +1,27 @@
 <?php 
 
 
-require_once '../Models/ModelAdmin.php';
+require_once '../Models/ModelVelo.php';
 
 
 
-class AdminController{
+class VeloController{
 
         
-	
-	public function getInfosSalarieAction($mail)
+    public function getLesVelosAction()
     {
-		
-       $infos = ModelAdmin::getgetInfosSalarie($idvelo);
-       require '../View/Admin.php';
+       $velos = ModelVelo::getLesVelos();
+       require '../View/listeVelo.php';
+    
+
+    }
+	
+	public function getVelosRepAction()
+    {
+       $reparation = ModelVelo::getVelosRep();
+       require '../View/detailsvelo_gestion.php';
 
     }
 	
 }
     ?>
-	
-	
-	
