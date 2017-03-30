@@ -26,25 +26,25 @@ class Salarie
 
     
     
-    public static function authentificationClient($login,$mdp)
+    public static function authentificationSalarie($login,$mdp)
     {
         
         ConnexionBase::Init();
 
-        $sql = "SELECT IDCLIENT, MAILCLIENT, MDPCLIENT FROM Client WHERE mailclient='".$login."' AND mdpclient='".$mdp."'";        
+        $sql = "SELECT * FROM salarie WHERE mailsalarie='".$login."' AND mdpsalarie='".$mdp."'";        
         $rep =  ConnexionBase::$pdo->query($sql); 
-        $rep->setFetchMode(PDO::FETCH_CLASS,"Client");
-        $clients = $rep->fetchAll(); 
+        $rep->setFetchMode(PDO::FETCH_CLASS,"Salarie");
+        $salaries = $rep->fetchAll(); 
 
-        $id_client = "";
+        $id_salarie = "";
 
-        foreach($clients as $client){
-            if($client['MAILCLIENT']==$login && $client['MDPCLIENT']==$mdp){
-                $id_client = $client['IDCLIENT'];
+        foreach($salaries as $salarie){
+            if($salarie['MAILSALARIE']==$login && $salarie['MDPSALARIE']==$mdp){
+                $id_salarie = $salarie['IDSALARIE'];
             }
         }
         
-        return $id_client;
+        return $id_salarie;
     }
     
     private function mapResult($infos) {
