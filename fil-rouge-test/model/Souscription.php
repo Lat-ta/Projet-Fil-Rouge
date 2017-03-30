@@ -1,6 +1,6 @@
 <?php
 
-include("ConnexionBase.php");
+require_once("ConnexionBase.php");
 
 class Souscription 
 {
@@ -23,12 +23,12 @@ class Souscription
     }*/
     
     
-    public static function abonnementClient($login)
+    public static function abonnementsClient($idClient)
     {
         
         ConnexionBase::Init();
 
-        $sql = "SELECT * FROM Souscription s INNER JOIN Abonnement a ON s.IDABONNEMENT=a.IDABONNEMENT WHERE s.IDCLIENT='".$login."'";        
+        $sql = "SELECT * FROM Souscription s INNER JOIN Abonnement a ON s.IDABONNEMENT=a.IDABONNEMENT WHERE s.IDCLIENT='".$idClient."'";        
         $rep =  ConnexionBase::$pdo->query($sql); 
         $rep->setFetchMode(PDO::FETCH_CLASS,"Souscription");
         $abonnements = $rep->fetchAll(); 

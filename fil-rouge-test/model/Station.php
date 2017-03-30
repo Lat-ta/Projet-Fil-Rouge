@@ -1,6 +1,6 @@
 <?php
 
-include("ConnexionBase.php");
+require_once("ConnexionBase.php");
 
 class Station 
 {

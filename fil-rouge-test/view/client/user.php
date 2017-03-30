@@ -6,7 +6,17 @@
 
 	<h4>Bonjour <?php echo $clientInfo->PRENOMCLIENT.' '.$clientInfo->NOMCLIENT ?>, bienvenue dans votre espace client.</h4>
 
+	<br/>
+
 	<h4>Voici ci-dessous la liste de vos abonnements :</h4>
+
+	<?php
+		if (!empty($abonnements)) {
+
+
+
+		}
+	?>
 
 
 <?php $contenu = ob_get_clean(); ?>

@@ -1,5 +1,6 @@
 <?php
 	require_once("model/Client.php");	
+	require_once("model/Souscription.php");	
 	
 	class ClientController {
 				
@@ -17,7 +18,7 @@
 			
 			//on vérifie si on est connecté
 			if (isset($_SESSION['idUtilisateurEnCours'])) { 				
-				monEspace();
+				$this->monEspace();
 			} else {
 				require_once("view/client/connexion.php");
 			}				
@@ -30,7 +31,9 @@
 			$this->client->getInfosClient($utilisateurEnCour);
             $clientInfo = $this->client;
 
-            //abonnement
+            $abonnements = Souscription::abonnementsClient($utilisateurEnCour);
+
+            var_dump($abonnements);
 
             require'view/client/user.php';
 		}
@@ -47,7 +50,7 @@
 	            session_start();
 	            $_SESSION['idUtilisateurEnCours']= $utilisateurEnCour;
             	
-            	monEspace();
+            	$this->monEspace();
 
 	        } else {
 	         	$msg_error = "Identifiants et/ou mot de passe invalides";
@@ -109,7 +112,7 @@
 							session_start();
 	            			$_SESSION['idUtilisateurEnCours']= $newIdClient;
 
-	            			monEspace();
+	            			$this->monEspace();
 						}
 
 					} else {
