@@ -1,6 +1,7 @@
 <?php
 	require_once("model/Client.php");	
 	require_once("model/Souscription.php");	
+	require_once("model/Abonnement.php");	
 	
 	class ClientController {
 				
@@ -32,8 +33,6 @@
             $clientInfo = $this->client;
 
             $abonnements = Souscription::abonnementsClient($utilisateurEnCour);
-
-            var_dump($abonnements);
 
             require'view/client/user.php';
 		}
@@ -149,6 +148,53 @@
 	        }
 
 			require_once("view/client/connexion.php");	          
+		}
+
+
+		function choixAbonnement() {			
+			
+			if (isset($_GET["idAbo"])) {
+				$idAbo = $_GET["idAbo"];
+			}				
+
+			$abonnements = Abonnement::getAbonnements(); 
+			require_once("view/client/change_offre.php");
+
+		}
+
+		function paiement() {
+
+			if (isset($_POST['post_form'])) {
+				
+				if (isset($_POST["idAbo"])) {
+					$idAbo = $_POST["idAbo"];
+				}
+			
+				//insert d'une nouvelle souscription, ou update d'une souscription existante
+				if (isset($_POST["idAbo"])) {
+					$msg_success = "Votre abonnement a bien été mis à jour.";
+				} else {
+
+					$msg_success = "Un nouvel abonnement vient d'être associé à votre compte.";
+				}
+				
+				require_once("view/client/confirmation_paiement.php");
+
+
+			} else {
+
+				if (isset($_GET["idAbo"])) {
+					$idAbo = $_GET["idAbo"];
+				}				
+
+				$utilisateurEnCour = $_SESSION['idUtilisateurEnCours'];
+				$this->client->getInfosClient($utilisateurEnCour);
+        		$clientInfo = $this->client;
+
+				
+				require_once("view/client/paiement.php");	          
+			}			
+
 		}
 			
 		

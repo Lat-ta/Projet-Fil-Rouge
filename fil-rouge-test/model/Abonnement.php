@@ -40,20 +40,18 @@ class Abonnement
     }
    
 
-    public function getAbonnements() {
+    public static function getAbonnements() {
 
         ConnexionBase::Init();
-
-        $sql = "SELECT * FROM abonnement";        
-        $rep =  ConnexionBase::$pdo->query($sql); 
-        $rep->setFetchMode(PDO::FETCH_CLASS,"Abonnement");
+        $sql = "SELECT * FROM ABONNEMENT";
+        $rep =  ConnexionBase::$pdo->query($sql);  
+        $rep->setFetchMode(PDO::FETCH_CLASS,"ModelAbonnement");
+        $abonnements = $rep->fetchAll(); 
         
-        $abo = $rep->fetchAll(); 
-
-        $this->mapResult($abo[0]);
+        return $abonnements;
     }
 
-	public function getAbonnements($idAbo) {
+	public function getAbonnement($idAbo) {
 
          ConnexionBase::Init();
 

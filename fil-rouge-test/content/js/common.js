@@ -99,3 +99,110 @@ function surligne(champ, erreur){
    else
 	  champ.style.backgroundColor = "";
 }
+
+
+function verifierformPaiement(f) {
+                  
+  var nomOk = verifNom(f.nomcarte);
+   var numOk = verifNum(f.numcarte);
+   var dateOk = verifDate(f.dateexpi);
+   var codeOk = verifCode(f.codesecu);
+   
+   if(nomOk && numOk && dateOk && codeOk)
+    return true;
+   else
+   {
+    alert("Veuillez remplir correctement tous les champs");
+    return false;
+   }
+}
+
+function verifNom(champ){
+  // si la valeur du champ nom carte est non vide
+  if(document.paiement.nomcarte.value != "") {
+  // les données sont ok, on peut envoyer le formulaire 
+  surligne(champ, false);
+  return true;
+  }
+  else {
+  // et on indique de ne pas envoyer le formulaire
+  surligne(champ, true);
+  return false;
+  }
+}
+
+function verifNum(champ){
+  // si la valeur du champ nom carte est non vide
+  if(document.paiement.numcarte.value != "") {
+  // les données sont ok, on peut envoyer le formulaire 
+  surligne(champ, false);
+  return true;
+  }
+  else {
+  // et on indique de ne pas envoyer le formulaire
+  surligne(champ, true);
+  return false;
+  }
+}
+
+function verifDate(champ){
+  // si la valeur du champ nom carte est non vide
+  if(document.paiement.dateexpi.value != "") {
+  // les données sont ok, on peut envoyer le formulaire 
+  surligne(champ, false);
+  return true;
+  }
+  else {
+  // et on indique de ne pas envoyer le formulaire
+  surligne(champ, true);
+  return false;
+  }
+}
+
+function verifCode(champ){
+  // si la valeur du champ nom carte est non vide
+  if(document.paiement.codesecu.value != "") {
+  // les données sont ok, on peut envoyer le formulaire 
+  surligne(champ, false);
+  return true;
+  }
+  else {
+  // et on indique de ne pas envoyer le formulaire
+  surligne(champ, true);
+  return false;
+  }
+}
+
+function afficherpaypal(){
+
+  document.getElementById('paiementpaypal').className = "shown";
+  document.getElementById('paiementcb').className = "hidden";
+  
+}
+
+function affichercb(){
+
+  document.getElementById('paiementcb').className = "shown";
+  document.getElementById('paiementpaypal').className = "hidden";
+  
+}
+
+function surligne(champ, erreur){
+   if(erreur)
+    champ.style.backgroundColor = "#fba";
+   else
+    champ.style.backgroundColor = "";
+}
+
+
+function pasdelettre(e){
+       
+          if( 48 < e.which && e.which< 57 || e.which ==9 || e.which ==0) {
+       
+       
+            }else{
+                e.preventDefault();
+                return false;
+              }
+       
+          }

@@ -5,9 +5,9 @@ require_once("ConnexionBase.php");
 class Souscription 
 {
 
-    private $IDABONNEMENT;
-    private $IDCLIENT;
-    private $DATESOUSCRIPTION;
+    public $IDABONNEMENT;
+    public $IDCLIENT;
+    public $DATESOUSCRIPTION;
 
     
     public function __construct() 
