@@ -1,0 +1,203 @@
+* {-moz-box-sizing: border-box; box-sizing: border-box;}
+
+html {
+	height: 100%;
+	margin: 0; padding: 0;
+}
+
+body {
+	
+	background-color: #FFFFFF;
+	color: #000;
+	font-family: 'Oxygen',Arial,Helvetica,sans-serif;
+	height:90%;
+}
+
+table{
+	border-collapse: separate;
+    border-spacing: 15px 8px;
+}
+
+
+.hidden{
+	display:none;
+}
+
+.shown{
+	display:visible;
+}
+
+.header {
+	position: fixed, top, absolute;
+	background-color: #FFFFFF;
+	margin-top:0;
+}
+
+.header_gest {
+	position: fixed, top, absolute;
+	background-color:#DCDCDC;
+	margin-top:0;
+	
+}
+
+.contenu{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+
+
+#footer-menu li{
+	display:inline;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+
+#footer-menu{
+	padding-left: 0;
+    text-align: center;
+}
+
+footer {
+	
+	background-color: #e10203;
+	display : table-row;
+	height: 5%;
+	position: fixed; 
+	bottom: 0; left: 0; right: 0; top:95%;
+	font-size:14px;
+	color:#FFFFFF;
+}
+
+
+#logovelov{
+	left:0;
+	top:0;
+	width:10%;
+	height:5%;
+	margin :0;
+
+}
+
+#logogdlyon{
+	float: right;
+	width:15%;
+	height:12%;
+	margin :0;
+
+}
+
+#centre{
+	display: inline-block;
+	text-align : center;
+    width:100px;
+	margin-left :50%;
+	margin-top:0;
+}
+
+#langfr{
+	width:25%;
+	height:15%;
+	
+}
+
+#langfr:hover {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+#langen:hover {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+#langen{
+	width:25%;
+	height:12%;
+}
+
+h1 {
+	
+	text-align: center;
+	font-family: 'Oxygen',Arial,Helvetica,sans-serif;
+    font-weight: bold;
+	
+}
+
+h2 {
+	
+	text-align: center;
+	font-family: 'Oxygen',Arial,Helvetica,sans-serif;
+    font-weight: normal;
+	color: #e10203;
+}
+
+
+.mentions_legales{
+	margin-bottom : 6%;
+}
+
+
+.dropdownmenu ul, .dropdownmenu li {
+	margin: 0;
+	padding: 0;
+}
+.dropdownmenu ul {
+
+	list-style: none;
+	
+	
+}
+.dropdownmenu li {
+	float: left;
+	position: relative;
+	
+}
+
+.dropdownmenu a {
+	background: #e10203;
+	color: #FFFFFF;
+	display: block;
+	padding: 10px 25px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	transition: all .25s ease;
+}
+.dropdownmenu li:hover a {
+	background: #000000;
+}
+#submenu {
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 35px;
+	visibility: hidden;
+	z-index: 1;
+}
+li:hover ul#submenu {
+	opacity: 1;
+	top: 40px;	/* adjust this as per top nav padding top & bottom comes */
+	visibility: visible;
+}
+#submenu li {
+	float: none;
+	width: 100%;
+}
+#submenu a:hover {
+	background: #DF4B05;
+}
+#submenu a {
+	background-color:#000000;
+}
+
+
+
+

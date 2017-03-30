@@ -1,0 +1,10 @@
+Tout est accessible via la page Acceuil.php
+
+La connexion client fonctionne
+MAIS l'espace client n'existe pas
+
+La connexion admin bug mais elle donne sur la page Admin.php 
+
+La page Admin.php fonctionne si tu la fais tourner directement en mode local et donne sur les pages de détails vélo, historique vélo et vélos en réparation (tout fonctionne)
+
+Les autres pages sont des pages d'affichage uniquement (mentions_legales, infos trafic etc...)
