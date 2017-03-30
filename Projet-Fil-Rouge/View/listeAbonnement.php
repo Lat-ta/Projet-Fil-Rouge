@@ -6,7 +6,7 @@
 	<title>Les Abonnements</title>
 	</head>
 	
-	<body >
+	<body>
 	<?php include("header.php"); ?>
 	
 	<?php include("menu.php"); ?>
@@ -15,7 +15,7 @@
 	</br>
 	
 	
-	<h1 id="titre">Les Abonnements</h1>
+	<h1 id="titre">Notre Offre </h1>
 	
 		<table >
 			<tr>

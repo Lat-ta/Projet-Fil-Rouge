@@ -9,7 +9,9 @@
 	<body>
 	
 	<?php include("header.php"); ?>
-	
+	<?php include("menu.php"); ?>
+	</br>
+	</br>
 	<h1>Informations sur les stations</h1>
 	<img id="velo" src="img/velo.jpg" style="margin-left :40%">
 	<h2>342</h2> <p style="margin-left :46%">stations en services</p>

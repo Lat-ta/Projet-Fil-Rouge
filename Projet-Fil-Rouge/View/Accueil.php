@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css"/>
-	<title>Les Abonnements</title>
+	<title>Accueil</title>
 	</head>
 	
 	<body >
@@ -14,13 +14,16 @@
 
 	</br>
 	</br>
+	</br>
+	
+	<table>
 	
 	
+	</table>
 	
 	
-	
-	
-	
+	<img id="accueil" src="img/accueil.jpg" style="width:40%; height:55%">
+
 		
 		<?php include("footer.php"); ?>
 	</body>
