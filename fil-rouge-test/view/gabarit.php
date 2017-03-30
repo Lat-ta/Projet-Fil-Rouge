@@ -11,7 +11,11 @@
         <link rel="stylesheet" href="content/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="content/css/style.css"/>
 
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcJpT6O7yGV8iUVKev9dZW6JEGCnvQqQM"></script>
+
         <script src="content/js/bootstrap.min.js"></script>
         <script src="content/js/common.js"></script>
 

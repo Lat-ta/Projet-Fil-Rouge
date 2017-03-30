@@ -119,26 +119,13 @@ footer {
 	height:12%;
 }
 
-h1 {
-	
-	text-align: center;
-	font-family: 'Oxygen',Arial,Helvetica,sans-serif;
-    font-weight: bold;
-	
-}
-
-h2 {
-	
-	text-align: center;
-	font-family: 'Oxygen',Arial,Helvetica,sans-serif;
-    font-weight: normal;
-	color: #e10203;
-}
-
-
 
 .mentions_legales{
 	margin-bottom : 6%;
 }
 
+#carte_stations {
+	width: 600px;
+	height: 500px;
+}
 

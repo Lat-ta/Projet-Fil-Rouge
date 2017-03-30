@@ -40,6 +40,7 @@
 
 		<?php # Mise en place du menu par un parcours de la table associative
 			$menu['Mon compte']="index.php?controller=ClientController&action=index";
+			$menu['Stations']="index.php?controller=StationController&action=index";
 			$menu['Mentions légales']="index.php?controller=IndexController&action=mentions";			
 					
 			foreach ($menu as $item => $act) {
