@@ -6,8 +6,6 @@
 
 	<form method="post" action="index.php?controller=ClientController&action=paiement" class="form-horizontal">
 
-		<input type="hidden" name="post_form" value="1" />
-
 		<?php 
 		if (isset($idAbo)) {
 			echo '<input type="hidden" name="idAbo" value="'.$idAbo.'" />';
@@ -18,13 +16,13 @@
 			<label for="abonnement" class="col-sm-2 control-label">Choisissez votre nouvel abonnement dans la liste :</label>		    
 		    <div class="col-sm-5">		      
 				<select name="abonnement" id="abonnement" class="form-control">
-					<?php
+					<?php						
 						foreach ($abonnements as $donnees) { 
 					?>
 				
-						 <option value="<?php echo $donnees->IDABONNEMENT ?>"> <?php echo $donnees->DESCRIPTIONABONNEMENT ?>, <?php echo $donnees->PRIXABONNEMENT ?>€</option>
+						 <option value="<?php echo $donnees['IDABONNEMENT']; ?>"> <?php echo $donnees['DESCRIPTIONABONNEMENT']; ?>, <?php echo $donnees['PRIXABONNEMENT']; ?>€</option>
 				
-					php } ?>
+					<?php } ?>
 				</select>
 
 		    </div>
