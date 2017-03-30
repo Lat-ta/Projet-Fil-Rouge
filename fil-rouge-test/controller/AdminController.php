@@ -69,6 +69,20 @@
 			require_once("view/admin/connexion.php");
 		}
 
+		function listeVelos() {
+			$velos = Velo::getLesVelos(); 
+
+			if(isset($_POST['idvelo'])){
+		
+				$idvelo = $_POST['idvelo'];
+
+				$detailVelo = Velo::getUnVeloRep($idvelo); 
+
+			}
+
+			require_once("view/admin/listeVelo.php");
+		}
+
 
 		function veloReparations() {
 			$velos = Velo::getVelosRep(); 

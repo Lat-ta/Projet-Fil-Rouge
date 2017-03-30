@@ -10,26 +10,28 @@
 
 			<table class="table table-striped">
 				<tr>
-					<td>Identifiant</td>
-					<td>Statut</td>
-					<td>Identifiant Borne</td>
-					<td>Identifiant Station</td>
-					<td>Nom Station</td>
+					<th>Identifiant</th>
+					<th>Statut</th>
+					<th>Identifiant Borne</th>
+					<th>Identifiant Station</th>
+					<th>Nom Station</th>
 
 					
 				</tr>
 				<?php 
-				foreach ($velos as $velo){?>
+				foreach ($velos as $detail){?>
 				<tr>
-					<td> <?php echo $velo->getIdVelo()?> </td>
-					<td> <?php echo $velo->getStatutVelo() ?> </td>
-					<td><?php echo $velo->getIdBorne()?></td>
-					<td><?php echo $velo->getIdStation()?></td>
-					<td><?php echo $velo->getNomStation()?></td>
+					<td> <?php echo $detail->IDVELO;?> </td>
+					<td> <?php echo $detail->STATUTVELO; ?> </td>
+					<td><?php echo $detail->IDBORNE; ?></td>
+					<td><?php echo $detail->IDSTATION; ?></td>
+					<td><?php echo $detail->NOMSTATION; ?></td>
 				</tr>
 				<?php } ?>
 			</table>
 		</div>
+		</div>
+
 <?php $contenu = ob_get_clean(); ?>
 
 

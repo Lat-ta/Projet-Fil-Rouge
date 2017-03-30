@@ -37,7 +37,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       
       <ul class="nav navbar-nav">
-      	<li><a href="index.php" title="Infos sur mes vélos">Informations sur les vélos</a></li>
+      	<li><a href="index.php?controller=AdminController&action=listeVelos" title="Infos sur mes vélos">Informations sur les vélos</a></li>
       	<li><a href="index.php?controller=AdminController&action=veloReparations" title="Liste des vélos en réparation">Vélos en Réparation</a></li>
       	<li><a href="#" title="Historique des  vélos">Historique des vélos</a></li>
 
