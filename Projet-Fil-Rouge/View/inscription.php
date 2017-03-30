@@ -1,147 +1,123 @@
 <!DOCTYPE html>
 <html>
-
-		<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1 " />
-		<link rel="stylesheet" href="style.css"/>
-		<script type="text/javascript" src="../jquery-1.10.2.js"></script>
-		<script>
-		$(document).ready(function()
-		   {
-		   
-			 $('h1').click(function()
-			   {
-				if ($('#contactForm').is(':hidden'))
-				  {
-				   $('#contactForm').slideDown('slow');
-				  }
-				else
-				  {
-				   $('#contactForm').slideUp('slow');
-				  }
-			   });
-			});
-				function VerifPseudo()
-			{
-				$.ajax({
-					
-					type:"Get",
-					url:"../JS/VerifPseudo.php?txtLogin="+$("#pseudo").val(),
-					success:resultatVerifPseudo
-					
-					
-					
-					
-				});
-				
-				
-				
-			}
-			
-			function resultatVerifPseudo(Param)
-			{
-				if(Param == 1)
-				{
-					$("#infoPseudo").text("Pseudo deja utilise");
-					
-					
-				}
-				else
-				{
-					$("#infoPseudo").text("");
-					
-				}
-				
-				
-				
-			}
-			function ConfirmationMdp()
-			{
-				if($("#password").val() != $("#verifPassword").val())
-				{
-					$("#infoMdp").text("Les deux mots de passes ne sont pas identiques");
-					
-				}
-				else
-				{
-					$("#infoMdp").text("");
-					
-				}
-				
-				
-				
-				
-			}
-		</script>
-
-		<script type="text/javascript">
-			
-		</script>
-		<title>INSCRIPTION</title>
-		</head>
-
-<body>
+	<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css"/>
+	<title>Localisation des Stations</title>
+	</head>
+	
+	<body>
 
 	<?php include("header.php"); ?>
-	<?php include("menu.php"); ?>
-	</br></br>
+	
+	<h1>Inscrivez-vous</h1>
+	<div style="height: 80%">
+	<form name="inscription" onsubmit="return verifierformulaire(this)" action ="paiement.php" method="post"  >
+	
+		<fieldset id="donneesperso"> 
+					<legend> Informations Personnelles </legend> 
+				
+					<p> <label for="nom"> Nom :</label> 
+					<input type ="text" name="nom" value="" onfocus=" if (value=='') value='';" required="required"/> 
+					</p>
+					
+					<p> <label for="prenom"> Prénom :</label> 
+					<input type ="text" name="prenom" required="required" /> </p>
+					
+					<p> <label for="adresse"> Adresse :</label> 
+					<textarea name="adresse" required="required"> </textarea> </p>
 
-	 
-	<div class="box">
-    <div id="contactFormContainer">
-		
-	<h1 id="title">Cliquer ici pour s'inscrire</h1>
-    
-            <form method="post" id="four" action="../Controller/InscriptionController.php">
-	<div id="contactForm">
- 		<fieldset>
- 			Nom* : 
- 				<input type="text" required="required" name="txtNom" class="cmdTxt" id="nom"/>
- 				<br>		
- 				Prénom* : 
- 				<input type="text" required="required" name="txtPrenom" class="cmdTxt" id="prenom"/>
- 				<br>		
- 				Adresse Postale* : 
- 				<input type="text" required="required" name="txtAdresse" class="cmdTxt" id="adresse"/>
- 				<br>
- 				Code Postale* : 
- 				<input type="text" required="required" name="txtCP" class="cmdTxt" id="cp"/>
- 				<br>
- 				Ville* : 
- 				<input type="text" required="required" name="txtVille" class="cmdTxt" id="ville"/>
- 				<br>
- 				Tel* : 
- 				<input type="text" required="required" name="txtTel" class="cmdTxt" id="tel"/>
- 				<br>
- 				Date de Naissance* : 
- 				<input type="date" required="required" name="txtDateNaissance" class="cmdTxt" id="dateNaissance"/>
- 				<br>
-				Mail* :
- 				<input type="text" required="required"  name="txtPseudo" class="cmdTxt" id="pseudo" onkeyup="VerifPseudo(this.value)"/>
- 				<br> 
-				<span id="infoPseudo"> </span>
-				<br>
-				IBAN* : 
- 				<input type="text" required="required" name="txtIBAN" class="cmdTxt" id="iban"/>
- 				<br>
- 				Password* : 
- 				<input type="password" required="required" name="txtPassword" class="cmdTxt" id="password"/>
- 				<br>
- 				
-				Conirmation Password* : 
-				 <input type="password" required="required"  name="txtPasswordConfirmation" class="cmdTxt"  id="verifPassword" onkeyup="ConfirmationMdp(this.value)"/>
-				 <br>
-				 <span id="infoMdp"> </span>
+					<p> <label for="Code Postal"> Code Postal :</label> 
+					<input name="codepostal"  required="required"> </input> </p> 
+
+					<p> <label for="Ville"> Ville :</label> 
+					<input name="Ville"   required="required"> </input> </p>
+					
+					<p> <label for="dateliv"> Date de naissance</label> </br>	
+					<input type ="text" name="datenais" placeholder="aaaa/mm/jj" required="required" /> </p> 
+
+					<p> <label for="tel"> Numéro de téléphone :</label> 
+					<input type ="text" name="tel" required="required" /> </p>
 		</fieldset>
-	<br>
-			
-			<input type="submit" value="Valider" id="cmdGo"/>
- 			<input type="reset" value="Annuler"/>
-			 </div>
-	</form>
-   </div>
-   </div>
+		
+		<fieldset id="donneesconnexion">
+		
+					<p> <label for="mail"> Adresse mail :</label> 
+					<input type ="mail" name="mail" required="required" /> </p> 
+					 
 
-</body>
-
+					<p> <label for="mot de passe"> Mot de passe :</label> 
+					<input type ="password" name="mdp" required="required"/> </p>
+					
+					<p> <label for="mot de passe"> Retapez votre mot de passe :</label> 
+					<input type ="password" name="verif_mdp" required="required"/> </p>						
+					
+				
+		</fieldset>
+				</br>	
+				<div style="width:60%; margin-left:15%">
+				<input type="submit" value="Valider" /> 
+				<input type="reset" value="Effacer" />
+				</div>	
+						<script>
+						function verifierformulaire(f) {
+									
+												   var mailOk = verifMail(f.mail);
+												   var mdpOk = verifMdp(f.mdp, f.verif_mdp)
+												   
+												   if(mailOk && mdpOk)
+													  return true;
+												   else
+												   {
+													  alert("Veuillez remplir correctement tous les champs");
+													  return false;
+												   }
+												}
+												
+												function verifMail(champ){
+													var regex = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+													   if(!regex.test(champ.value))
+													   {
+														  surligne(champ, true);
+														  return false;
+													   }
+													   else
+													   {
+														  surligne(champ, false);
+														  return true;
+														  }
+												}
+												
+												function verifMdp(champ1, champ2){
+												
+												   if (champ1.value!=champ2.value)
+												   {
+													alert("Les mots de passes ne sont pas identiques")
+													surligne(champ1, true);
+													return false;
+												   }
+												   else{
+												   surligne(champ, false);
+														  return true;}
+												 }
+												
+												
+												function surligne(champ, erreur){
+												   if(erreur)
+													  champ.style.backgroundColor = "#fba";
+												   else
+													  champ.style.backgroundColor = "";
+												}
+												
+												
+												
+						
+						</script>
+	
+	
+	</form>	
+	</div>
+	
+	<?php include("footer.php"); ?>
+	</body>
 </html>

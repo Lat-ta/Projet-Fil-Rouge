@@ -1,60 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<script type="text/javascript" src="../jquery-1.10.2.js"></script>
-<link rel="stylesheet" href="style.css"/>
-<script>
-$(document).ready(function()
-   {
-   
-     $('h1').click(function()
-       {
-        if ($('#contactForm').is(':hidden'))
-          {
-           $('#contactForm').slideDown('slow');
-          }
-        else
-          {
-           $('#contactForm').slideUp('slow');
-          }
-       });
-    });
-</script>
-
-<script type="text/javascript">
+	<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="style.css"/>
+	<title>Connexion</title>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	</head>
+	<body>
 	
-</script>
-</head>
-<body >
-
-	<?php include("header.php"); ?>
-	<?php include("menu.php"); ?>
-	</br></br>
-
-  <div id="contactFormContainer">
+		<?php include("header.php"); ?>
 		
-	<h1 id="title">Connectez vous ici</h1>
-    
-            <form method="POST" action="../Controller/ClientController.php">
-	<div id="contactForm">
- 		<fieldset>				
+		<div id="bloc_page">
 
-	Pseudo : <input  type="text" name="txtPseudo"/>
-	Mot de passe : <input  type="password" name="txtPassword"/>
-	<input type="submit" value="Valider"/>
-	<input type="reset" value="Annuler"/>
-	
-	
-<a href="../View/inscription.phtml"><input type="button" value="S'inscrire"/> </a>
-<a href="../View/mdpOublie.phtml"><input type="button" value="MdpOublie"/> </a>
+		<div id="banni�re">
+				<div id="banni�re_description">
+				<b>Bienvenue sur le site troc de temps! </b>
+				</div>		
+			</div>
+		
+		<p>Connectez vous</p>
+		<form method="POST" action="../Controller/ClientController.php">
+			<table>
+			<tr>
+			<td>Login</td>
+			<td><input type="text" id="txtLogin" name="txtLogin" required="required"></td>
+			</tr>
+			<tr>
+			<td>Mot de passe</td>
+			<td><input type="text" id="txtMdp" name="txtMdp" required="required"></td>
+			</tr>
+			</table>
+			<input type="submit" value=Valider>
+		</form>
 
-		</fieldset>
-			 </div>
-	</form>
-   
-
-    </div>
-</body>
+		</div>
+		
+		<?php include("footer.php"); ?>
+	</body>
 </html>
