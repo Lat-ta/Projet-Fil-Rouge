@@ -5,11 +5,14 @@
 	<h1 class="page-header">Paiement</h1>
 
 
-	<form name="paiement" onsubmit="return verifierformPaiement(this)" action ="index.php?controller=ClientController&action=paiement"> 
+	<form name="paiement" onsubmit="return verifierformPaiement(this)" action ="index.php?controller=ClientController&action=paiement" method="post"> 
+
+		<input type="hidden" name="post_form" value="" />
+		<?php echo '<input type="hidden" name="idAbo" value="'.$idAbo.'" />'; ?>
 
 		<?php 
-		if (isset($idAbo)) {
-			echo '<input type="hidden" name="idAbo" value="'.$idAbo.'" />';
+		if (isset($oldIdAbo)) {
+			echo '<input type="hidden" name="oldIdAbo" value="'.$oldIdAbo.'" />';
 		}
 	 	?>
 
@@ -84,7 +87,12 @@
 						<div class="form-group">
 							<label for="codesecu"> Code de sécurité </label> : 
 							<input type ="text" class="form-control" name="codesecu" maxlength="3" value="" onfocus=" if (value=='') value=' ';"/>
-						</div>						
+						</div>				
+
+						<div style="display:inline">
+							<input type="submit" class="btn btn-success" value="Paiement" />
+							<input type="reset" class="btn btn-danger" value="Effacer" />
+						</div>		
 
 				    </div>
 
@@ -105,12 +113,15 @@
 							<input type="password" class="form-control" name="mdppaypal" value="" onfocus=" if (value=='') value=' ';"/>
 						</div>	
 
+						<div style="display:inline">
+							<input type="submit" class="btn btn-success" value="Paiement" />
+							<input type="reset" class="btn btn-danger" value="Effacer" />
+						</div>		
 					</div>
 
 				  </div>
 
-				  	<input type="submit" class="btn btn-success" value="Paiement" />
-					<input type="reset" class="btn btn-danger" value="Effacer" />
+				  	
 
 				</div>
 
@@ -120,3 +131,9 @@
 				
 												
 	</form>
+
+	
+<?php $contenu = ob_get_clean(); ?>
+
+
+<?php require_once ("view/gabarit.php"); ?>
