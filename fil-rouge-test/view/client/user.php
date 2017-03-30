@@ -2,12 +2,13 @@
 
 <?php ob_start(); ?>
 
+	<h1 class="page-header">Mon espace membre</h1>
 
-	<div id="corps">
-			<p>Mon espace membre</p>
+	<h4>Bonjour <?php echo $clientInfo->PRENOMCLIENT.' '.$clientInfo->NOMCLIENT ?>, bienvenue dans votre espace client.</h4>
 
-			<p>A REMPLIR</p>
-	</div>
+	<h4>Voici ci-dessous la liste de vos abonnements :</h4>
+
+	
 
 <?php $contenu = ob_get_clean(); ?>
 

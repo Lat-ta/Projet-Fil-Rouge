@@ -5,17 +5,17 @@ include("ConnexionBase.php");
 class Client 
 {
 
-    private $IDCLIENT;
-    private $NOMCLIENT;
-    private $PRENOMCLIENT;
-    private $ADRESSECLIENT;
-    private $CPCLIENT;
-    private $VILLECLIENT;
-    private $TELCLIENT;
-    private $MAILCLIENT;
-    private $DATENAISSANCECLIENT;
-    private $CB;
-    private $MDPCLIENT;
+    public $IDCLIENT;
+    public $NOMCLIENT;
+    public $PRENOMCLIENT;
+    public $ADRESSECLIENT;
+    public $CPCLIENT;
+    public $VILLECLIENT;
+    public $TELCLIENT;
+    public $MAILCLIENT;
+    public $DATENAISSANCECLIENT;
+    public $CB;
+    public $MDPCLIENT;
     
     public function __construct() 
     {  
@@ -46,16 +46,45 @@ class Client
         $sql = "SELECT IDCLIENT, MAILCLIENT, MDPCLIENT FROM Client WHERE mailclient='".$login."' AND mdpclient='".$mdp."'";        
         $rep =  ConnexionBase::$pdo->query($sql); 
         $rep->setFetchMode(PDO::FETCH_CLASS,"Client");
-        $clients = $rep->fetchAll(); 
+        $client = $rep->fetchAll(); 
 
-        $id_client = "";
+        $id_client = "";      
 
-        foreach($clients as $client){
-            if($client['MAILCLIENT']==$login && $client['MDPCLIENT']==$mdp){
-                $id_client = $client['IDCLIENT'];
-            }
-        }
+        if ($client) {
+            $id_client = $client[0]->IDCLIENT;
+        }        
         
         return $id_client;
     }
+
+    private function mapResult($infos) {    
+        $this->IDCLIENT = $infos->IDCLIENT;
+        $this->NOMCLIENT = $infos->NOMCLIENT;
+        $this->PRENOMCLIENT = $infos->PRENOMCLIENT;
+        $this->ADRESSECLIENT = $infos->ADRESSECLIENT;
+        $this->CPCLIENT = $infos->CPCLIENT;
+        $this->VILLECLIENT = $infos->VILLECLIENT;
+        $this->TELCLIENT = $infos->TELCLIENT;
+        $this->MAILCLIENT = $infos->MAILCLIENT;
+        $this->DATENAISSANCECLIENT = $infos->DATENAISSANCECLIENT;
+        $this->CB = $infos->CB;
+        $this->MDPCLIENT = $infos->MDPCLIENT;
+    }
+
+    public function getInfosClient($idClient) {
+
+        ConnexionBase::Init();
+
+        $sql = "SELECT * FROM Client WHERE IDCLIENT='".$idClient."'";        
+        $rep =  ConnexionBase::$pdo->query($sql); 
+        $rep->setFetchMode(PDO::FETCH_CLASS,"Client");
+        
+        $client = $rep->fetchAll(); 
+
+        $this->mapResult($client[0]);
+    }
+
+
+    
+
 }

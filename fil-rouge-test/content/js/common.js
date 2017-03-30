@@ -17,7 +17,6 @@ function initMap() {
     zoom: 12
   });
 
-
   $.ajax({
       url: "index.php?controller=StationController&action=getListeStationJson",
       type: "post",

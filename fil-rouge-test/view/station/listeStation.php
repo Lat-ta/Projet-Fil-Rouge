@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-<h1 class="page-header">Liste de toutes les stations</h1>
+	<h1 class="page-header">Liste de toutes les stations</h1>
 	
 	<div class="row">
 
