@@ -19,7 +19,7 @@
 
 <!-- barre de navigation-->
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-admin navbar-default">
   
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -37,10 +37,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       
       <ul class="nav navbar-nav">
-      	<li><a href="#" title="Espace client">Informations sur les vélos</a></li>
-      	<li><a href="#" title="Liste des stations">Vélos en Réparation</a></li>
-      	<li><a href="#" title="Utilisation du service">Historique des vélos</a></li>
+      	<li><a href="index.php" title="Infos sur mes vélos">Informations sur les vélos</a></li>
+      	<li><a href="index.php?controller=AdminController&action=veloReparations" title="Liste des vélos en réparation">Vélos en Réparation</a></li>
+      	<li><a href="#" title="Historique des  vélos">Historique des vélos</a></li>
 
+        <li style="margin-left:100px;">
+          <a style="font-size:90%" href="index.php?controller=AdminController&action=logout">Se déconnecter</a>
+        </li>
 
       </ul>
 

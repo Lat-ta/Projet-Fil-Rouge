@@ -49,8 +49,7 @@
           </ul>
         </li>
 
-        <?php 
-        	
+        <?php         	
         	if (isset($_SESSION['idUtilisateurEnCours'])) {
         		echo '<li><a href="index.php?controller=ClientController&action=logout" title="Se déconnecter">Se déconnecter</a></li>';
         	}
@@ -58,7 +57,7 @@
 
 
         <li style="margin-left:100px;">
-        	<a style="font-size:90%" href="#">Administration</a>
+        	<a style="font-size:90%" href="index.php?controller=AdminController&action=index">Administration</a>
         </li>
       	
 

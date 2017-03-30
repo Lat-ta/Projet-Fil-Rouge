@@ -21,7 +21,7 @@
 
     </head>
 
-    <body>
+    <body class="admin">
 
       <div class="container">
 

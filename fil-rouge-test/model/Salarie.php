@@ -5,19 +5,19 @@ include("ConnexionBase.php");
 class Salarie 
 {
 
-    private $IDSALARIE;
-    private $NOMSALARIE;
-    private $PRENOMSALARIE;
-    private $ADRESSESALARIE;
-    private $CPSALARIE;
-    private $VILLESALARIE;
-    private $TELSALARIE;
-    private $MAILSALARIE;
-    private $MDPSALARIE;
-    private $DATENAISSANCESALARIE;
-    private $POSTESALARIE;
-    private $DATEEMBAUCHE;
-    private $DATEFINCONTRAT;
+    public $IDSALARIE;
+    public $NOMSALARIE;
+    public $PRENOMSALARIE;
+    public $ADRESSESALARIE;
+    public $CPSALARIE;
+    public $VILLESALARIE;
+    public $TELSALARIE;
+    public $MAILSALARIE;
+    public $MDPSALARIE;
+    public $DATENAISSANCESALARIE;
+    public $POSTESALARIE;
+    public $DATEEMBAUCHE;
+    public $DATEFINCONTRAT;
     
     public function __construct() 
     {  
@@ -34,15 +34,13 @@ class Salarie
         $sql = "SELECT * FROM salarie WHERE mailsalarie='".$login."' AND mdpsalarie='".$mdp."'";        
         $rep =  ConnexionBase::$pdo->query($sql); 
         $rep->setFetchMode(PDO::FETCH_CLASS,"Salarie");
-        $salaries = $rep->fetchAll(); 
+        $salarie = $rep->fetchAll(); 
 
         $id_salarie = "";
 
-        foreach($salaries as $salarie){
-            if($salarie['MAILSALARIE']==$login && $salarie['MDPSALARIE']==$mdp){
-                $id_salarie = $salarie['IDSALARIE'];
-            }
-        }
+        if ($salarie) {
+            $id_salarie = $salarie[0]->IDSALARIE;
+        }        
         
         return $id_salarie;
     }
