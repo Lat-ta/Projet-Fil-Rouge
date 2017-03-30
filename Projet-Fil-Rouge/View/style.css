@@ -35,8 +35,9 @@ table{
 
 .header_gest {
 	position: fixed, top, absolute;
-	background-color: #FFFFFF;
+	background-color:#DCDCDC;
 	margin-top:0;
+	
 }
 
 .contenu{
