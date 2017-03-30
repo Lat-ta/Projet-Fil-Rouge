@@ -35,4 +35,23 @@ class Souscription
         
         return $abonnements;
     }
+	
+	public static function insertSouscription($idabo, $idclient, $datedeb, $datefin) {
+		ConnexionBase::Init();
+            
+        $b = false;   
+        $sql="INSERT INTO souscription VALUES('$idabo','$idclient','$datedeb','$datefin')";
+        
+        $res = ConnexionBase::$pdo->exec($sql);
+		
+		if(!empty($res)){
+            $b = true;
+        }   
+
+        return $b;
+	}
+	
+	
+	
+	
 }
