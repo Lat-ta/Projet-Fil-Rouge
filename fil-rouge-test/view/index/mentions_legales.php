@@ -11,7 +11,8 @@
 
 	<div class="mentions_legales">
 			
-		<h1>Mentions légales</h1>
+		<h1 class="page-header">Mentions légales</h1>
+
 			<table>
 			
 				<tr>

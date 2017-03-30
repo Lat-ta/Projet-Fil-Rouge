@@ -84,6 +84,45 @@ class Client
         $this->mapResult($client[0]);
     }
 
+    public static function mdpOublie($mail)
+    {
+        ConnexionBase::Init();
+        $sql = "SELECT * FROM client WHERE mailclient='$mail'";
+        $rep =  ConnexionBase::$pdo->query($sql);  
+        $rep->setFetchMode(PDO::FETCH_CLASS,"ModelClient");
+        $client = $rep->fetchAll(); 
+   
+        return $client;
+    }
+
+    public static function VerifEmailExist($mail) {
+ 
+        $b = false;
+        $sql="SELECT mailclient FROM Client WHERE mailclient='".$mail."'";
+        $resultat = ConnexionBase::$pdo->query($sql);
+        $esultat->setFetchMode(PDO::FETCH_CLASS,"Client");
+
+        if(!empty($resultat)){
+            $b = true;
+        }   
+
+        return $b;
+    }
+
+    public static function inscriptionClient($nom,$prenom,$adresse,$cp,$ville,$tel,$pseudo, $dateNaissance,$password){
+        ConnexionBase::Init();
+            
+        $lastId = "";    
+        $sql="INSERT INTO client VALUES(IDCLIENT,'$nom','$prenom','$adresse','$cp','$ville','$tel','$pseudo','$dateNaissance','$password')";
+        
+        $res = ConnexionBase::$pdo->exec($sql);
+
+        if ($res == 1) {
+            $lastId= ConnexionBase::$pdo->lastInsertId();
+        }
+
+        return $lastId;
+    }
 
     
 

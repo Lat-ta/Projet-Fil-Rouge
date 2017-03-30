@@ -8,7 +8,6 @@
 
 	<h4>Voici ci-dessous la liste de vos abonnements :</h4>
 
-	
 
 <?php $contenu = ob_get_clean(); ?>
 

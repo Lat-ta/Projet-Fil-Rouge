@@ -2,8 +2,7 @@
 
 <?php ob_start(); ?>
 
-<h1>Inscrivez-vous</h1>
-
+<h1 class="page-header">Inscrivez-vous</h1>
 
 	<?php
 		if (isset($msg_error)) {
@@ -78,7 +77,7 @@
 	    <label for="mail" class="col-sm-2 control-label">Adresse mail</label>
 	    <div class="col-sm-5">      
 	      <input type ="mail" class="form-control" name="mail" id="mail" required="required"/> 
-	    </div>
+	    </div>	    
 	</div>		
 
 	<div class="form-group">

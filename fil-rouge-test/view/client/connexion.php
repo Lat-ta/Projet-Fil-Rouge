@@ -2,9 +2,16 @@
 
 <?php ob_start(); ?>
 
+	<h1 class="page-header">Connexion à son espace client</h1>
+
+
 	<?php
 		if (isset($msg_error)) {
 			echo '<div class="alert alert-danger">'.$msg_error.'</div>';
+		}
+
+		if (isset($msg_success)) {
+			echo '<div class="alert alert-success">'.$msg_success.'</div>';
 		}
 	?>
 

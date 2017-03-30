@@ -30,23 +30,27 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">Vélo'v</a>
+      <a class="navbar-brand" href="index.php">Accueil Vélo'v</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       
       <ul class="nav navbar-nav">
+      	<li><a href="index.php?controller=ClientController&action=index" title="Espace client">Mon compte</a></li>
+      	<li><a href="index.php?controller=StationController&action=index" title="Liste des stations">Stations</a></li>
+      	<li><a href="index.php?controller=IndexController&action=utilisation" title="Utilisation du service">Comment utiliser le service</a></li>
 
-		<?php # Mise en place du menu par un parcours de la table associative
-			$menu['Mon compte']="index.php?controller=ClientController&action=index";
-			$menu['Stations']="index.php?controller=StationController&action=index";
-			$menu['Mentions légales']="index.php?controller=IndexController&action=mentions";			
-					
-			foreach ($menu as $item => $act) {
-				print "<li><a href=\"$act\">$item</a></li>\n";
-			}
-		?>
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infos et tarifs <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Nos abonnements</a></li>
+            <li><a href="#">Infos trafic</a></li>            
+          </ul>
+        </li>
+
+      	<li><a href="index.php?controller=ClientController&action=index" title="Espace client">Mon compte</a></li>
+
       </ul>
 
     </div><!-- /.navbar-collapse -->

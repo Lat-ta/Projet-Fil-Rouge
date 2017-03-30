@@ -20,7 +20,11 @@
 			// Selectionne et charge la vue
 			require_once("view/index/mentions_legales.php");
 		} 
-	
+
+		function utilisation() {
+			// Selectionne et charge la vue
+			require_once("view/index/utilisation.php");
+		} 
 
 		
 	}

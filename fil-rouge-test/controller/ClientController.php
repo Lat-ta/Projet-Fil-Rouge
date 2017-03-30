@@ -17,11 +17,22 @@
 			
 			//on vérifie si on est connecté
 			if (isset($_SESSION['idUtilisateurEnCours'])) { 				
-				require_once("view/client/main.php");
+				monEspace();
 			} else {
 				require_once("view/client/connexion.php");
 			}				
 			
+		}
+
+		function monEspace() {
+
+			$utilisateurEnCour = $_SESSION['idUtilisateurEnCours'];
+			$this->client->getInfosClient($utilisateurEnCour);
+            $clientInfo = $this->client;
+
+            //abonnement
+
+            require'view/client/user.php';
 		}
 		
 		
@@ -36,19 +47,14 @@
 	            session_start();
 	            $_SESSION['idUtilisateurEnCours']= $utilisateurEnCour;
             	
-            	//$abonnement
+            	monEspace();
 
-            	 $this->client->getInfosClient($utilisateurEnCour);
-
-            	 $clientInfo = $this->client;
-
-	            require'view/client/user.php';
 	        } else {
 	         	$msg_error = "Identifiants et/ou mot de passe invalides";
 	         	require_once("view/client/connexion.php");
 	        }  
 
-		}
+		}		
 
 
 		function logout() {
@@ -88,11 +94,24 @@
 
 					if ($mdp != $verif_mdp) {
 						$bool = false;
-						array_push($msg_error, "Les mots de passes ne correspondent pas");
+						array_push($msg_error, "Les mots de passe ne correspondent pas");
 					}
 
-					if ($bool == true) {
-						//todo (save en BDD)	
+					if (Client::VerifEmailExist($mail)) {
+						$bool = false;
+						array_push($msg_error, "L'email saisi est déjà utilisé'");	
+					}
+
+					if ($bool == true) {						
+						$newIdClient = Client::inscriptionClient($nom, $prenom, $adresse, $cp, $ville, $tel, $pseudo, $dateNaissance, $password);
+
+						if ($newIdClient != "") {
+							session_start();
+	            			$_SESSION['idUtilisateurEnCours']= $newIdClient;
+
+	            			monEspace();
+						}
+
 					} else {
 						require_once("view/client/inscription.php");
 					}
@@ -108,14 +127,27 @@
 		}
 
 
-		function mdpOublie() {
-			//todo
-
+		function mdpOublie() {			
 			//Vérifier que le mail saisi existe bien en base de données et envoyer un mail
+			$mail = $_POST["txtEmail"];
+			$resultats = Client::mdpOublie($mail);
+    
+  
+	        if(empty($resultats))
+	        {
+	        	$msg_error = "Email inconnu, veuillez-vous inscrire";	         	
+	        }
+	        else
+	        {
+	            foreach ($resultats as $resultat) {	         			            	
+	            	mail('$pseudo', 'Mot de passe Fil Rouge', $resultat["MDPCLIENT"]);	            	
+	            	$msg_success = "Un email avec votre mot de passe vient de vous être envoyé";	         	   	
+	            }
+	        }
 
-			echo 'action à faire';
+			require_once("view/client/connexion.php");	          
 		}
-		
+			
 		
 	}
 

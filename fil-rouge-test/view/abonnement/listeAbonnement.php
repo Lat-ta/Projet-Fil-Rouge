@@ -6,11 +6,18 @@
 	<title>Les Abonnements</title>
 	</head>
 	
-	<body >
+	<body>
 	<?php include("header.php"); ?>
-	<h1 id="titre">Les Abonnements</h1>
 	
-		<table>
+	<?php include("menu.php"); ?>
+
+	</br>
+	</br>
+	
+	
+	<h1 id="titre">Notre Offre </h1>
+	
+		<table >
 			<tr>
 				<td>Type Abonnement</td>
 				<td>Description Abonnement</td>
