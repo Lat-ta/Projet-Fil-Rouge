@@ -95,6 +95,7 @@
 				
 				</br>
 				
+				
 				<div style="width:60%; text-align:center;">
 				<input type="submit" value="Paiement" />
 				<input type="reset" value="Effacer" />
