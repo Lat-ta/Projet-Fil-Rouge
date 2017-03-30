@@ -18,8 +18,6 @@
 		function index() {
 			
 			//on vérifie si on est connecté
-			session_start();
-			
 			if (isset($_SESSION['idUtilisateurEnCours'])) { 				
 				$this->monEspace();
 			} else {
@@ -29,7 +27,7 @@
 		}
 
 		function monEspace() {
-			
+
 			$utilisateurEnCour = $_SESSION['idUtilisateurEnCours'];
 			$this->client->getInfosClient($utilisateurEnCour);
             $clientInfo = $this->client;
@@ -189,7 +187,6 @@
 					$idAbo = $_GET["idAbo"];
 				}				
 
-				session_start();
 				$utilisateurEnCour = $_SESSION['idUtilisateurEnCours'];
 				$this->client->getInfosClient($utilisateurEnCour);
         		$clientInfo = $this->client;
