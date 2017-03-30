@@ -51,6 +51,21 @@ class Souscription
         return $b;
 	}
 	
+	public static function updateSouscription($idabo, $idclient, $datedeb, $datefin){
+		ConnexionBase::Init();
+            
+        $b = false;   
+        $sql="UPDATE souscription SET IDABONNEMENT='$idabo', IDCLIENT='$idclient', DATESOUSCRIPTION='$datedeb', DATEFINABONNEMENT='$datefin'";
+        
+        $res = ConnexionBase::$pdo->exec($sql);
+		
+		if(!empty($res)){
+            $b = true;
+        }   
+
+        return $b;
+	}
+	
 	
 	
 	
