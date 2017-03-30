@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="style.css"/>
-	<title>Vélos en réparation</title>
-	</head>
+<?php $titre = 'Historique des vélos'; ?>
+
+<?php ob_start(); ?>
 	
-	<body >
-	<?php include("header_gestion.php"); ?>
-	<?php include("menu_gestion.php"); ?>
-	
-	
-	</br>
-	
+	<P>De quel vélo voulez-vous avoir les détails de réparation ? </p>
 	<form method="POST" action="historiqueUnVelo.php">
 	
 	<input type="text" name="idvelo" />
@@ -22,7 +12,7 @@
 	
 	</br>
 	
-	<table>
+	<table class="table table-striped">
 		<tr>
 		
 			<td>Identifiant</td>
@@ -32,11 +22,7 @@
 		
 		</tr>
 		<?php 
-		require_once '../Controller/VeloController.php';
-		
-
-		$histo = ModelVelo::getHistoriqueVelos(); 
-		foreach ($histo as $velo):?>
+		foreach ($histo as $velo){?>
 		<tr>
 			<td style="text-align:center"> <?php echo $velo->getIdVelo()?> </td>
 			<td style="text-align:center"> <?php echo $velo->getDateMiseEnRoute()?> </td>
@@ -44,20 +30,12 @@
 			<td style="text-align:center"> <?php echo $velo->getIdStation()?> </td>
 	
 		</tr>
-		<?php endforeach;?>
+		<?php }?>
 	</table>	
 	
 	
+<?php $contenu = ob_get_clean(); ?>
 
-	<footer>
-			
-			<ul id="footer-menu">
-				<li>
-				<b>Intranet Vélo'v ©</b>
-				</li>
-			</ul>
-		
-	</footer>
-		
-	</body>
-</html>
+
+
+<?php require_once ("view/gabarit_admin.php"); ?>
