@@ -1,90 +1,93 @@
 <!DOCTYPE html>
 <html>
 
-		<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1 " />
-		<link rel="stylesheet" href="style.css"/>
-		<script type="text/javascript" src="../jquery-1.10.2.js"></script>
-		<script>
-		$(document).ready(function()
-		   {
-		   
-			 $('h1').click(function()
-			   {
-				if ($('#contactForm').is(':hidden'))
-				  {
-				   $('#contactForm').slideDown('slow');
-				  }
-				else
-				  {
-				   $('#contactForm').slideUp('slow');
-				  }
-			   });
-			});
-				function VerifPseudo()
-			{
-				$.ajax({
-					
-					type:"Get",
-					url:"../JS/VerifPseudo.php?txtLogin="+$("#pseudo").val(),
-					success:resultatVerifPseudo
-					
-					
-					
-					
-				});
-				
-				
-				
-			}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1 " />
+<link rel="stylesheet" href="style.css"/>
+<script type="text/javascript" src="../jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function()
+   {
+   
+     $('h1').click(function()
+       {
+        if ($('#contactForm').is(':hidden'))
+          {
+           $('#contactForm').slideDown('slow');
+          }
+        else
+          {
+           $('#contactForm').slideUp('slow');
+          }
+       });
+    });
+	 	function VerifPseudo()
+	{
+		$.ajax({
 			
-			function resultatVerifPseudo(Param)
-			{
-				if(Param == 1)
-				{
-					$("#infoPseudo").text("Pseudo deja utilise");
-					
-					
-				}
-				else
-				{
-					$("#infoPseudo").text("");
-					
-				}
-				
-				
-				
-			}
-			function ConfirmationMdp()
-			{
-				if($("#password").val() != $("#verifPassword").val())
-				{
-					$("#infoMdp").text("Les deux mots de passes ne sont pas identiques");
-					
-				}
-				else
-				{
-					$("#infoMdp").text("");
-					
-				}
-				
-				
-				
-				
-			}
-		</script>
+			type:"Get",
+			url:"../JS/VerifPseudo.php?txtLogin="+$("#pseudo").val(),
+			success:resultatVerifPseudo
+			
+			
+			
+			
+		});
+		
+		
+		
+	}
+	
+	function resultatVerifPseudo(Param)
+	{
+		if(Param == 1)
+		{
+			$("#infoPseudo").text("Pseudo deja utilise");
+			
+			
+		}
+		else
+		{
+			$("#infoPseudo").text("");
+			
+		}
+		
+		
+		
+	}
+	function ConfirmationMdp()
+	{
+		if($("#password").val() != $("#verifPassword").val())
+		{
+			$("#infoMdp").text("Les deux mots de passes ne sont pas identiques");
+			
+		}
+		else
+		{
+			$("#infoMdp").text("");
+			
+		}
+		
+		
+		
+		
+	}
+</script>
 
-		<script type="text/javascript">
-			
-		</script>
-		<title>INSCRIPTION</title>
-		</head>
+<script type="text/javascript">
+	
+</script>
+<title>INSCRIPTION</title>
+</head>
 
 <body>
-
 	<?php include("header.php"); ?>
+	
 	<?php include("menu.php"); ?>
-	</br></br>
+
+	</br>
+	</br>
+	</br>
 
 	 
 	<div class="box">
@@ -141,7 +144,7 @@
 	</form>
    </div>
    </div>
-
+<?php include("footer.php"); ?>
 </body>
 
 </html>
