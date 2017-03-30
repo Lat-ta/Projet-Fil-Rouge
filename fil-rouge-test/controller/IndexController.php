@@ -1,5 +1,6 @@
 <?php
-		
+	require_once("model/Abonnement.php");	
+	
 	class IndexController {
 			
 		
@@ -26,7 +27,15 @@
 			require_once("view/index/utilisation.php");
 		} 
 
+		function listeAbonnement() {
+			// Selectionne et charge la vue
+			$abonnements = Abonnement::getAbonnements(); 
+			require_once("view/index/listeAbonnement.php");
+		} 
 		
+		function infosTrafic() {
+			require_once("view/station/infos.php");	
+		}
 	}
 
 ?>

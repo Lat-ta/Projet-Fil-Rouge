@@ -61,6 +61,7 @@
 
 
 		function logout() {
+			session_start();
 			unset($_SESSION['idUtilisateurEnCours']);
 			require_once("view/client/connexion.php");
 		}
@@ -80,7 +81,7 @@
 					$nom = $_POST["nom"];
 					$prenom = $_POST["prenom"];
 					$adresse = $_POST["adresse"];
-					$code_postal = $_POST["code_postal"];
+					$cp = $_POST["code_postal"];
 					$ville = $_POST["ville"];
 					$date_naissance = $_POST["date_naissance"];
 					$tel = $_POST["tel"];
@@ -108,13 +109,15 @@
 					}
 
 					if ($bool == true) {						
-						$newIdClient = Client::inscriptionClient($nom, $prenom, $adresse, $cp, $ville, $tel, $pseudo, $dateNaissance, $password);
+						$newIdClient = Client::inscriptionClient($nom, $prenom, $adresse, $cp, $ville, $tel, $mail, $date_naissance, $mdp);
 
-						if ($newIdClient != "") {
-							session_start();
+						if ($newIdClient != "") {							
 	            			$_SESSION['idUtilisateurEnCours']= $newIdClient;
 
 	            			$this->monEspace();
+						} else {
+							array_push($msg_error, "Erreur lors de la création de votre compte'");			
+							require_once("view/client/inscription.php");	
 						}
 
 					} else {

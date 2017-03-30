@@ -44,12 +44,23 @@
 		<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infos et tarifs <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Nos abonnements</a></li>
-            <li><a href="#">Infos trafic</a></li>            
+            <li><a href="index.php?controller=IndexController&action=listeAbonnement">Nos abonnements</a></li>
+            <li><a href="index.php?controller=IndexController&action=infosTrafic">Infos trafic</a></li>            
           </ul>
         </li>
 
-      	<li><a href="index.php?controller=ClientController&action=index" title="Espace client">Mon compte</a></li>
+        <?php 
+        	
+        	if (isset($_SESSION['idUtilisateurEnCours'])) {
+        		echo '<li><a href="index.php?controller=ClientController&action=logout" title="Se déconnecter">Se déconnecter</a></li>';
+        	}
+        ?>
+
+
+        <li style="margin-left:100px;">
+        	<a style="font-size:90%" href="#">Administration</a>
+        </li>
+      	
 
       </ul>
 

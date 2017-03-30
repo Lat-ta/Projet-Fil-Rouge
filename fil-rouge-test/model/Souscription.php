@@ -41,8 +41,6 @@ class Souscription
             
         $b = false;   
         $sql="REPLACE INTO souscription VALUES('$idabo','$idclient',NOW(), NOW() + INTERVAL 1 YEAR)";
-        
-echo $sql;
 
         $res = ConnexionBase::$pdo->exec($sql);
 		

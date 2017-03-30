@@ -1,30 +1,35 @@
-<!DOCTYPE html>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="style.css"/>
-	<title>Informations</title>
-	</head>
+<?php $titre = 'Choix d\'une offre'; ?>
+
+<?php ob_start(); ?>
+
+	<h1 class="page-header">Informations sur les stations</h1>
 	
-	<body>
+	<div class="row">
+
+		<div class="col-md-6">
+			<h2>Stations en services : <span class="label label-success">342</span></h2>
+
+			<h4>Stations fermées : <span class="label label-danger">2</span></h4>
+			<h4>Stations partiellement fermées : <span class="label label-danger">1</span></h4>
+		</div>			
+
+		<div class="col-md-6">
+			<img id="velo" src="content/img/velo.jpg" style="margin-left :40%">
+		</div>			
+
+	</div>
 	
-	<?php include("header.php"); ?>
-	<?php include("menu.php"); ?>
-	</br>
-	</br>
-	<h1>Informations sur les stations</h1>
-	<img id="velo" src="img/velo.jpg" style="margin-left :40%">
-	<h2>342</h2> <p style="margin-left :46%">stations en services</p>
-	<p style="margin-left :40%"> <b>2</b> stations fermées et <b>1</b> partiellement fermées</p></br> </br>
+<hr/>
 	
-	<table style="width : 80%; margin-left:15%; height : 40%" cellspacing="10">
+	
+	<table class="table table-striped">
 		<tr >
-			<td style="height:5px">Station	</br></td>
-			<td style="width:auto, text-align:center">Emplacement	</br></td>
-			<td style="width:auto">Identifiant Station	</br></td>
-			<td style="width:auto">Statut	</br></td>
-			<td style="width:auto">Durée	</br></td>
-			<td style="width:auto">Description	</br></td>
+			<th style="height:5px">Station	</br></th>
+			<th style="width:auto, text-align:center">Emplacement	</br></th>
+			<th style="width:auto">Identifiant Station	</br></th>
+			<th style="width:auto">Statut	</br></th>
+			<th style="width:auto">Durée	</br></th>
+			<th style="width:auto">Description	</br></td>
 
 			
 		</tr>
@@ -59,7 +64,9 @@
 		</table>
 	
 	
-	<?php include("footer.php"); ?>
-	
-	</body>
-</html>
+
+
+<?php $contenu = ob_get_clean(); ?>
+
+
+<?php require_once ("view/gabarit.php"); ?>

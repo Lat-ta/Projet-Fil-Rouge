@@ -89,7 +89,7 @@ class Client
         ConnexionBase::Init();
         $sql = "SELECT * FROM client WHERE mailclient='$mail'";
         $rep =  ConnexionBase::$pdo->query($sql);  
-        $rep->setFetchMode(PDO::FETCH_CLASS,"ModelClient");
+        $rep->setFetchMode(PDO::FETCH_CLASS,"Client");
         $client = $rep->fetchAll(); 
    
         return $client;
@@ -97,12 +97,14 @@ class Client
 
     public static function VerifEmailExist($mail) {
  
+        ConnexionBase::Init();
         $b = false;
         $sql="SELECT mailclient FROM Client WHERE mailclient='".$mail."'";
         $resultat = ConnexionBase::$pdo->query($sql);
-        $esultat->setFetchMode(PDO::FETCH_CLASS,"Client");
+        $resultat->setFetchMode(PDO::FETCH_CLASS,"Client");
+        $client = $resultat->fetchAll(); 
 
-        if(!empty($resultat)){
+        if(!empty($client)){
             $b = true;
         }   
 
@@ -112,9 +114,11 @@ class Client
     public static function inscriptionClient($nom,$prenom,$adresse,$cp,$ville,$tel,$pseudo, $dateNaissance,$password){
         ConnexionBase::Init();
             
+        $dateNaissance = date('Y-m-d', strtotime(str_replace('-', '/', $dateNaissance)));
+
         $lastId = "";    
-        $sql="INSERT INTO client VALUES(IDCLIENT,'$nom','$prenom','$adresse','$cp','$ville','$tel','$pseudo','$dateNaissance','$password')";
-        
+        $sql="INSERT INTO client (NOMCLIENT, PRENOMCLIENT, ADRESSECLIENT, CPCLIENT, VILLECLIENT, TELCLIENT, MAILCLIENT, DATENAISSANCECLIENT, MDPCLIENT) VALUES('$nom','$prenom','$adresse','$cp','$ville','$tel','$pseudo','$dateNaissance','$password')";
+        echo $sql;
         $res = ConnexionBase::$pdo->exec($sql);
 
         if ($res == 1) {
