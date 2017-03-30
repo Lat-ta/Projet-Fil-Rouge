@@ -1,8 +1,17 @@
-<div class="confirmation_p" style="text-align:center; margin-top:20%">
+<?php $titre = 'Confirmation paiement'; ?>
+
+<?php ob_start(); ?>
+
+	<h1 class="page-header">Paiement</h1>
+
+	<div class="well">
 			
-	<div class="alert alert-success">
-		<?php echo $msg; ?>
-	</div>
+	<?php
+		if (isset($msg_success)) { ?>
+			<div class="alert alert-success">
+				<?php echo $msg_success; ?>
+			</div>
+	<?php } ?>
 
 	<p> Merci d'avoir souscrit à un de nos abonnement. </p>
 	<p> A bientôt dans les rues lyonnaises ! </p>
@@ -11,4 +20,10 @@
 	<h2> <a href="index.php?controller=ClientController&action=index" style="color:#e10203">  Retour à mon compte </a> </h2>
 			
 			
-</div>
+	</div>
+
+
+<?php $contenu = ob_get_clean(); ?>
+
+
+<?php require_once ("view/gabarit.php"); ?>

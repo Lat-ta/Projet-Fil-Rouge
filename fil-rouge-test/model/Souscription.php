@@ -40,8 +40,10 @@ class Souscription
 		ConnexionBase::Init();
             
         $b = false;   
-        $sql="INSERT INTO souscription VALUES('$idabo','$idclient',NOW(), NOW() + INTERVAL 1 YEAR)";
+        $sql="REPLACE INTO souscription VALUES('$idabo','$idclient',NOW(), NOW() + INTERVAL 1 YEAR)";
         
+echo $sql;
+
         $res = ConnexionBase::$pdo->exec($sql);
 		
 		if(!empty($res) && $res > 0){

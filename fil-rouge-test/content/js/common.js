@@ -118,7 +118,7 @@ function verifierformPaiement(f) {
      }
 
  } else if (document.getElementById('paiementpaypal').className == "shown") {
-  alert('hoho');
+  
     var mailOk = verifChamp(f.identifiant);
      var mdpOk = verifChamp(f.mdppaypal);
 

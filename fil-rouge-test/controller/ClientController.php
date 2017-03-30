@@ -179,10 +179,10 @@
 				if (isset($_POST["oldIdAbo"])) {
 					$oldIdAbo = $_POST["oldIdAbo"];
 
-					Abonnement::updateSouscription($idAbo, $oldIdAbo, $utilisateurEnCour);
+					Souscription::updateSouscription($idAbo, $oldIdAbo, $utilisateurEnCour);
 					$msg_success = "Votre abonnement a bien été mis à jour.";
 				} else {
-					Abonnement::insertSouscription($idAbo, $utilisateurEnCour);
+					Souscription::insertSouscription($idAbo, $utilisateurEnCour);
 					$msg_success = "Un nouvel abonnement vient d'être associé à votre compte.";
 				}
 				
