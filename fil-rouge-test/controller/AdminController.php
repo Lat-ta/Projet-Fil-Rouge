@@ -71,15 +71,6 @@
 
 		function listeVelos() {
 			$velos = Velo::getLesVelos(); 
-
-			if(isset($_POST['idvelo'])){
-		
-				$idvelo = $_POST['idvelo'];
-
-				$detailVelo = Velo::getUnVeloRep($idvelo); 
-
-			}
-
 			require_once("view/admin/listeVelo.php");
 		}
 
@@ -99,6 +90,18 @@
 		}
 
 
+		function historiqueVelos() {			
+
+			if(isset($_POST['idvelo'])){		
+				$idvelo = $_POST['idvelo'];
+				$detailVelo = Velo::getHistoriqueUnVelo($idvelo); 
+				require_once("view/admin/historiqueUnVelo.php");
+			} else {
+				$histo = Velo::getHistoriqueVelos(); 
+				require_once("view/admin/historiquevelo_gestion.php");
+			}
+			
+		}
 
 	}
 

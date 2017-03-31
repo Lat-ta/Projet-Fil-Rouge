@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
       	<li><a href="index.php?controller=AdminController&action=listeVelos" title="Infos sur mes vélos">Informations sur les vélos</a></li>
       	<li><a href="index.php?controller=AdminController&action=veloReparations" title="Liste des vélos en réparation">Vélos en Réparation</a></li>
-      	<li><a href="#" title="Historique des  vélos">Historique des vélos</a></li>
+      	<li><a href="index.php?controller=AdminController&action=historiqueVelos" title="Historique des  vélos">Historique des vélos</a></li>
 
         <li style="margin-left:100px;">
           <a style="font-size:90%" href="index.php?controller=AdminController&action=logout">Se déconnecter</a>
